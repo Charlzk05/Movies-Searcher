@@ -11,26 +11,42 @@
     <div class="main">
         <div class="header">
             <h3>Results for {{ name }}</h3>
-            <div class="searchBar">
-                <form>
-                    <input type="text" placeholder="Search">
+            <div class="searchBar" 
+                <form method="get" action="http://localhost:3000/search" >
+                    <input name="name" type="text" placeholder="Search">
                     <input type="submit" value="Search">
                 </form>
             </div>
         </div>
-        <div class="mainBody">
+        <div class="listContainer">
+            <div class="semiHeader">
+                <h3>Movies</h3>
+            </div>
             <div class="list">
-                {% for item in result: %}
-                    <div class="item">
-                        <img src='{{ item["i"]["imageUrl"] }}'>
-                        <p><span class="type">{{ item["q"] }}:</span> {{ item["l"] }}</p>
-                        <p>Rank: <span class="rank">{{ item["rank"] }}</span></p>
-                        <p>Year: <span class="year">{{ item["y"] }}</span></p>
-                    </div>
+                {% for item in results: %}
+                    {% try: %}
+                        <div class="item">
+                            <img src='{{ item["i"]["imageUrl"] }}'>
+                            <div class="info">
+                                <p class="title"> {{ item["l"] }}</p>
+                                <p class="type">{{ item["q"] }}</p>
+                                <p>Rank: <span class="rank">{{ item["rank"] }}</span></p>
+                                <p>Year: <span class="year">{{ item["y"] }}</span></p>
+                            </div>
+                        </div>
+                    {% catch: %}
+                        {% continue %}
                 {% endfor %}
             </div>
-            <div class="bottom">
-                <a href="https://github.com/Charlzk05/Movies-Searcher">Source code on Github</a>
+            <div class="semiHeader">
+                <h3>People</h3>
+            </div>
+            <div class="list">
+                {% for item in results: %}
+                    <div class="item">
+                        <p>{{ item["s"] }}</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
