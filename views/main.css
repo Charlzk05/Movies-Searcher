@@ -125,6 +125,9 @@ body {
 .item .info .title {
     font-size: 20px;
 }
+.item .info .description {
+    color: gray;
+}
 .item .info .type {
     color: gray;
 }
