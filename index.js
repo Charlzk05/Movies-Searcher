@@ -27,6 +27,22 @@ app.get("/", (req, res) => {
     }
 });
 
+app.get("/info", (req, res) => {
+    try {
+        fs.readFile(path.join(__dirname, "Top Movies Data", "data.json"), { encoding: "utf-8" }, (err, data) => {
+            if (err) {
+                return console.log(err.message);
+            }
+            res.render("info", {
+                infos: JSON.parse(data)[0]
+            });
+        });
+    } catch (err) {
+        res.sendStatus(500);
+        console.log(err.message);
+    }
+});
+
 app.get("/topmovies", (req, res) => {
     try {
         const options = {
@@ -44,6 +60,7 @@ app.get("/topmovies", (req, res) => {
                     console.log(err.message);
                 }
                 res.redirect("/");
+                console.log("Top Movies Data has been refreshed");
             });
         }).catch((error) => {
             res.sendStatus(500);
@@ -71,35 +88,53 @@ app.get("/search", (req, res) => {
             if (err) {
                 return console.log(err.message);
             }
-            for (var i = 0; i < data.length; i++) {
-                if (data[i] == `${name}.json`) {
-                    fs.readFile(path.join(__dirname, "Search Data", `${name}.json`), { encoding: "utf-8" }, (err, data) => {
+            if (data.length == 0) {
+                axios.request(options).then((response) => {
+                    res.render("search", {
+                        name: name,
+                        results: response.data["d"]
+                    });
+                    fs.writeFile(path.join(__dirname, "Search Data", `${name}.json`.toLowerCase()), JSON.stringify(response.data["d"], null, 4), { encoding: "utf-8" }, (err) => {
                         if (err) {
                             return console.log(err.message);
                         }
-                        res.render("search", {
-                            name: name,
-                            results: JSON.parse(data)
-                        });
                     });
-                    break;
-                } else {
-                    axios.request(options).then((response) => {
-                        res.render("search", {
-                            name: name,
-                            results: response.data["d"]
-                        });
-                        fs.writeFile(path.join(__dirname, "Search Data", `${name}.json`), JSON.stringify(response.data["d"], null, 4), { encoding: "utf-8" }, (err) => {
+                    console.log("New Movies Data has been Created!");
+                }).catch((error) => {
+                    res.sendStatus(500);
+                    console.log(error.message);
+                });
+            } else {
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i] == `${name}.json`.toLowerCase()) {
+                        fs.readFile(path.join(__dirname, "Search Data", `${name}.json`.toLowerCase()), { encoding: "utf-8" }, (err, data) => {
                             if (err) {
                                 return console.log(err.message);
                             }
+                            res.render("search", {
+                                name: name,
+                                results: JSON.parse(data)
+                            });
                         });
-                        console.log("New Movies Data has been Created!");
-                    }).catch((error) => {
-                        res.sendStatus(500);
-                        console.log(error.message);
-                    });
-                    break;
+                        break;
+                    } else {
+                        axios.request(options).then((response) => {
+                            res.render("search", {
+                                name: name,
+                                results: response.data["d"]
+                            });
+                            fs.writeFile(path.join(__dirname, "Search Data", `${name}.json`.toLowerCase()), JSON.stringify(response.data["d"], null, 4), { encoding: "utf-8" }, (err) => {
+                                if (err) {
+                                    return console.log(err.message);
+                                }
+                            });
+                            console.log("New Movies Data has been Created!");
+                        }).catch((error) => {
+                            res.sendStatus(500);
+                            console.log(error.message);
+                        });
+                        break;
+                    }
                 }
             }
         });

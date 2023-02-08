@@ -3,14 +3,14 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Charlzk Movies Searcher</title>
+    <title>Charlzk Movies, TV & Video Games Searcher</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
     <div class="main">
         <div class="header">
-            <h3>Charlzk Movies Searcher</h3>
+            <h3>Charlzk Movies, TV & Video Games Searcher</h3>
             <div class="searchBar">
                 <form method="get" action="/search">
                     <input name="name" type="text" placeholder="Search">
@@ -20,7 +20,7 @@
         </div>
         <div class="listContainer">
             <div class="semiHeader">
-                <h3>Top Movies</h3>
+                <h3>Top 100 Movies</h3>
             </div>
             <div class="list">
                 <% for (var i = 0; i < results.length; i++) { %>
@@ -30,10 +30,12 @@
                                 <img src='<%- results[i]["thumbnail"] %>'>
                                 <div class="info">
                                     <p class="title"><%- results[i]["title"] %></p>
-                                    <p class="description"><%-%></p>
-                                    <p class="type"><%- results[i]["q"] %></p>
+                                    <p><%- results[i]["genre"] %> <span class="year"><%- results[i]["year"] %></span></p>
+                                    <p>Directed by <%- results[i]["director"] %></p>
+                                    <p class="description"><%- results[i]["description"] %></p>
                                     <p>Rank: <span class="rank"><%- results[i]["rank"] %></span></p>
-                                    <p>Year: <span class="year"><%- results[i]["year"] %></span></p>
+                                    <p>Rating: <span class="rank"><%- results[i]["rating"] %></span></p>
+                                    <p><a style="text-decoration: none;" href='<%- results[i]["trailer"] %>'>Watch Trailer</a></p>
                                 </div>
                             </div>
                         <% } %>

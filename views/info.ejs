@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Charlzk Movies, TV & Video Games Searcher</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='info.css'>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h3>Charlzk Movies, TV & Video Games Searcher</h3>
+            <div class="searchBar">
+                <form method="get" action="/search">
+                    <input name="name" type="text" placeholder="Search">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <div class="info">
+                <img src='<%- infos["thumbnail"] %>'>
+                <h3><%- infos["title"] %></h3>
+                <p>Rank: <span class="rank"><%- infos["rank"] %></span></p>
+                <p>Rating: <span class="rank"><%- infos["rating"] %></span></p>
+                <p style="color: #0d6efd;"><%- infos["year"] %></p>
+                <div class="description">
+                    <p class="text">Description</p>
+                    <p class="desc"><%- infos["description"] %></p>
+                </div>
+                <p>Genre: <span style="color: gray;"><%- infos["genre"] %></span></p>
+                <p>Directed By <%- infos["director"] %></p>
+                <p>Writers: <span style="color: gray;"><%- infos["writers"] %></span></p>
+                <video width="720" height="1280">
+
+                </video>
+            </div>
+        </div>
+        <!--
+        <div class="listContainer">
+            <div class="list">
+            </div>
+        </div>
+        -->
+    </div>
+    <script src='info.js'></script>
+</body>
+</html>

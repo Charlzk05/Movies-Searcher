@@ -84,62 +84,37 @@ body {
     background-color: #2d2d2d;
     transition: all 0.2s;
 }
-/* list container */
-.listContainer {
+/* main container */
+.mainContainer {
     position: absolute;
     top: 120px;
     left: 0;
     right: 0;
     bottom: 0;
 }
-.main .semiHeader h3 {
+.info {
     margin: 20px;
+}
+.info h3 {
     font-weight: 500;
 }
-.list {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    gap: 5px;
-    flex-wrap: wrap;
+.info p {
+    margin: 0;
+    margin-top: 10px;
 }
-.item {
-    background-color: #191919;
-    border-radius: 5px;
-    border: 5px;
-    padding: 10px;
-    border: 0;
-    width: 300px;
-    transition: all 0.2s;
+.info .description {
+    margin: 5px;
 }
-.item:hover {
-    background-color: #232323;
-    transition: all 0.2s;
+.info .description .text {
+    margin: 0;
 }
-.item:active {
-    background-color: #2d2d2d;
-    transition: all 0.2s;
-}
-.item img {
-    border-radius: 5px;
-    width: 100%;
-}
-.item .info {
-    margin: 10px;
-}
-.item .info p {
+.info .description .desc {
     margin: 0;
     margin-top: 5px;
+    padding: 10px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
 }
-.item .info .title {
-    font-size: 20px;
-}
-.item .info .type {
-    color: gray;
-}
-.item .info .rank {
+.info .rank {
     color: #ffc107;
-}
-.item .info .year {
-    color: #0d6efd;
 }

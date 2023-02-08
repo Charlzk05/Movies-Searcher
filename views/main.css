@@ -110,17 +110,31 @@ body {
     padding: 10px;
     border: 0;
     width: 300px;
+    transition: all 0.2s;
+}
+.item:hover {
+    background-color: #232323;
+    transition: all 0.2s;
+}
+.item:active {
+    background-color: #2d2d2d;
+    transition: all 0.2s;
 }
 .item img {
     border-radius: 5px;
-    width: 100%;
+    margin: 10px;
 }
 .item .info {
     margin: 10px;
 }
 .item .info p {
     margin: 0;
-    margin-top: 5px;
+    margin-top: 10px;
+}
+.item .info a {
+    margin: 0;
+    margin-top: 30px;
+    color: #0d6efd;
 }
 .item .info .title {
     font-size: 20px;

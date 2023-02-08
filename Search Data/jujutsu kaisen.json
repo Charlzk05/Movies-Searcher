@@ -1,0 +1,95 @@
+[
+    {
+        "i": {
+            "height": 3000,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BNGY4MTg3NzgtMmFkZi00NTg5LWExMmEtMWI3YzI1ODdmMWQ1XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg",
+            "width": 2000
+        },
+        "id": "tt12343534",
+        "l": "Jujutsu Kaisen",
+        "q": "TV series",
+        "qid": "tvSeries",
+        "rank": 1406,
+        "s": "Junya Enoki, Adam McArthur",
+        "y": 2020
+    },
+    {
+        "i": {
+            "height": 1596,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BODM0NmVjMzUtOTJhNi00N2ZhLWFkYmMtYmZmNjRiY2M1YWY4XkEyXkFqcGdeQXVyOTgxOTA5MDg@._V1_.jpg",
+            "width": 1064
+        },
+        "id": "tt14331144",
+        "l": "Jujutsu Kaisen 0: The Movie",
+        "q": "feature",
+        "qid": "movie",
+        "rank": 6842,
+        "s": "Chinatsu Akasaki, Aya Endô",
+        "y": 2021
+    },
+    {
+        "i": {
+            "height": 1920,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BZWIzMWEzNTktNjc0Yy00MjM3LTg1OGMtYThmNGM4MjllZTRiXkEyXkFqcGdeQXVyMTQ3NDk4NTE4._V1_.jpg",
+            "width": 1536
+        },
+        "id": "tt23017932",
+        "l": "Hood Jujutsu Kaisen",
+        "q": "feature",
+        "qid": "movie",
+        "rank": 85037,
+        "s": "Lizzy Ashliegh, Dominique Barrett",
+        "y": 2022
+    },
+    {
+        "i": {
+            "height": 720,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BNDk4OTYzZTctMzQ0Yi00YjY1LWI1N2EtODlhODQyNTJiZjZkXkEyXkFqcGdeQXVyMzYzNzc1NjY@._V1_.jpg",
+            "width": 1280
+        },
+        "id": "tt16578930",
+        "l": "Jujutsu Kaisen: Maki Vs. Miwa",
+        "q": "short",
+        "qid": "short",
+        "rank": 262844,
+        "s": "Hana Wu, Julie Zhan",
+        "y": 2021
+    },
+    {
+        "i": {
+            "height": 720,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BMmI0ODg1NDctY2M0YS00M2VkLWE1ZmEtNWZiOTZlOWI3Y2NjXkEyXkFqcGdeQXVyMTExMTAxNjA2._V1_.jpg",
+            "width": 1280
+        },
+        "id": "tt14524948",
+        "l": "Blind Wave: Jujutsu Kaisen Reaction",
+        "q": "TV series",
+        "qid": "tvSeries",
+        "rank": 460001,
+        "s": "Eric Whiteley, Calvin Grubb",
+        "y": 2021
+    },
+    {
+        "id": "tt16289674",
+        "l": "Jujutsu kaisen: Jujutôku",
+        "q": "podcastSeries",
+        "qid": "podcastSeries",
+        "rank": 2433999,
+        "s": "",
+        "y": 2021
+    },
+    {
+        "i": {
+            "height": 1024,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BOTVmMGJjYTktNmM2Ni00ZjkxLTgzOGYtNDIzZTJmY2RlY2E0XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
+            "width": 722
+        },
+        "id": "tt10256918",
+        "l": "A Certain Scientific Accelerator",
+        "q": "TV series",
+        "qid": "tvSeries",
+        "rank": 86692,
+        "s": "Amber Lee Connors, Brittney Karbowski",
+        "y": 2019
+    }
+]
