@@ -3,24 +3,27 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Charlzk Movies, TV & Video Games Searcher - <%- name %></title>
+    <title>Charlzk Movies, TV Shows & Video Games Searcher - <%- name %></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='global.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='search.css'>
 </head>
 <body>
     <div class="main">
+        <div class="background"></div>
         <div class="header">
-            <h3>Results for <%- name %></h3>
+            <h3>Results for <span><%- name %></span></h3>
             <div class="searchBar">
                 <form method="get" action="/search">
                     <input name="name" type="text" placeholder="Search">
                     <input type="submit" value="Search">
                 </form>
+                <button onclick='window.location.href = "/";'>Home</button>
             </div>
         </div>
         <div class="listContainer">
             <div class="semiHeader">
-                <h3>Movies, TV & Video Games</h3>
+                <h3>Movies, TV Shows & Video Games</h3>
             </div>
             <div class="list">
                 <% for (var i = 0; i < results.length; i++) { %>
@@ -59,7 +62,5 @@
             </div>
         </div>
     </div>
-
-    <script src='search.js'></script>
 </body>
 </html>

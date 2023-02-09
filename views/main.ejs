@@ -3,19 +3,22 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Charlzk Movies, TV & Video Games Searcher</title>
+    <title>Charlzk Movies, TV Shows & Video Games Searcher</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='global.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
     <div class="main">
+        <div class="background"></div>
         <div class="header">
-            <h3>Charlzk Movies, TV & Video Games Searcher</h3>
+            <h3>Charlzk <span>Movies, TV Shows & Video Games Searcher</span></h3>
             <div class="searchBar">
                 <form method="get" action="/search">
                     <input name="name" type="text" placeholder="Search">
-                    <input type="submit" value="Search">
+                    <input type="submit" value="Search" disabled>
                 </form>
+                <button onclick='window.location.href = "/";'>Home</button>
             </div>
         </div>
         <div class="listContainer">
@@ -46,6 +49,6 @@
             </div>
         </div>
     </div>
-    <script src='main.js'></script>
+    <script src="./global.js"></script>
 </body>
 </html>

@@ -27,22 +27,6 @@ app.get("/", (req, res) => {
     }
 });
 
-app.get("/info", (req, res) => {
-    try {
-        fs.readFile(path.join(__dirname, "Top Movies Data", "data.json"), { encoding: "utf-8" }, (err, data) => {
-            if (err) {
-                return console.log(err.message);
-            }
-            res.render("info", {
-                infos: JSON.parse(data)[0]
-            });
-        });
-    } catch (err) {
-        res.sendStatus(500);
-        console.log(err.message);
-    }
-});
-
 app.get("/topmovies", (req, res) => {
     try {
         const options = {

@@ -42,11 +42,14 @@ body {
 .header h3 {
     font-weight: 500;
 }
+.header span {
+    color: #ffc107;
+}
 .searchBar {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
 }
 .searchBar input[type=text] {
     background-color: transparent;
@@ -66,14 +69,16 @@ body {
     transition: all 0.2s;
 }
 .searchBar input[type=submit] {
-    background-color: transparent;
-    border: 0.5px solid gray;
+    background-color: #1e1e1e;
+    border: 0;
     cursor: pointer;
+    margin-left: 5px;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
     color: white;
     border-radius: 5px;
+    opacity: 1;
     transition: all 0.2s;
 }
 .searchBar input[type=submit]:hover {
@@ -84,37 +89,43 @@ body {
     background-color: #2d2d2d;
     transition: all 0.2s;
 }
-/* main container */
-.mainContainer {
-    position: absolute;
-    top: 120px;
+.searchBar input[type=submit]:disabled {
+    background-color: #dc3545;
+    opacity: 0.6;
+    cursor: default;
+    transition: all 0.2s;
+}
+.searchBar button {
+    background-color: #1e1e1e;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    border-radius: 5px;
+    opacity: 1;
+    transition: all 0.2s;
+}
+.searchBar button:hover {
+    background-color: #232323;
+    transition: all 0.2s;
+}
+.searchBar button:active {
+    background-color: #2d2d2d;
+    transition: all 0.2s;
+}
+/* background */
+.background {
+    position: fixed;
+    background-image: url("./Background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    opacity: 0.4;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
-.info {
-    margin: 20px;
-}
-.info h3 {
-    font-weight: 500;
-}
-.info p {
-    margin: 0;
-    margin-top: 10px;
-}
-.info .description {
-    margin: 5px;
-}
-.info .description .text {
-    margin: 0;
-}
-.info .description .desc {
-    margin: 0;
-    margin-top: 5px;
-    padding: 10px;
-    border: 0.5px solid gray;
-    border-radius: 5px;
-}
-.info .rank {
-    color: #ffc107;
+    z-index: -1;
 }
