@@ -13,14 +13,19 @@ app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
     try {
-        fs.readFile(path.join(__dirname, "Top Movies Data", "data.json"), { encoding: "utf-8" }, (err, data) => {
-            if (err) {
-                return console.log(err.message);
-            }
-            res.render("main", {
-                results: JSON.parse(data)
+        const dataFile = path.join(__dirname, "Top Movies Data", "data.json");
+        if (fs.existsSync(dataFile)) {
+            fs.readFile(dataFile, { encoding: "utf-8" }, (err, data) => {
+                if (err) {
+                    return console.log(err.message);
+                }
+                res.render("main", {
+                    results: JSON.parse(data)
+                });
             });
-        });
+        } else {
+            res.redirect("/topmovies");
+        }
     } catch (err) {
         res.sendStatus(500);
         console.log(err.message);
@@ -33,13 +38,13 @@ app.get("/topmovies", (req, res) => {
             method: 'GET',
             url: 'https://imdb-top-100-movies.p.rapidapi.com/',
             headers: {
-              'X-RapidAPI-Key': 'effed8c978mshc5c36ee79f41be1p1b13edjsnbd6c5b3fb54f',
+              'X-RapidAPI-Key': process.env["TopMoviesRapidAPIKey"],
               'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
             }
         };
 
         axios.request(options).then((response) => {
-            fs.writeFile(path.join(__dirname, "topMoviesData", "data.json"), JSON.stringify(response.data, null, 4), { encoding: "utf-8" }, (err) => {
+            fs.writeFile(path.join(__dirname, "Top Movies Data", "data.json"), JSON.stringify(response.data, null, 4), { encoding: "utf-8" }, (err) => {
                 if (err) {
                     console.log(err.message);
                 }
@@ -63,8 +68,8 @@ app.get("/search", (req, res) => {
             method: "GET",
             url: `https://imdb-movies-web-series-etc-search.p.rapidapi.com/${name}.json`,
             headers: {
-                "X-RapidAPI-Key": process.env["rapidAPIKey"],
-                "X-RapidAPI-Host": process.env["rapidAPIHost"]
+                "X-RapidAPI-Key": process.env["IMDBrapidAPIKey"],
+                "X-RapidAPI-Host": "imdb-movies-web-series-etc-search.p.rapidapi.com"
             }
         };
 
