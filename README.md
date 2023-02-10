@@ -9,10 +9,9 @@ A simple Movies Searcher that uses IMDB API
 2. ``git clone https://github.com/Charlzk05/Movies-Searcher.git``
 3. Go to the directory
 4. Create a new directory and name it "Top Movies Data" and "Search Data"
-5. Register your [IMDB Top 100 Movies](https://rapidapi.com/rapihub-rapihub-default/api/imdb-top-100-movies) and [IMDB Search](https://rapidapi.com/rahilkhan224/api/imdb-movies-web-series-etc-search/) APIs
-6. ``npm i``
-7. ``npm run start``
-8. Navigate to ``localhost:3000``
+5. ``npm i``
+6. ``npm run start``
+7. Navigate to ``localhost:3000``
 
 # Website
 Main Page
